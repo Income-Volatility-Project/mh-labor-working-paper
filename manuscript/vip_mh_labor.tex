@@ -1,0 +1,535 @@
+\documentclass[12pt, a4paper, american]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+% Line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+% Math and symbols packages
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Font encoding and input encoding
+\usepackage[LGR,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Language package
+\usepackage[american]{babel}
+
+% Packages for figures and tables
+\usepackage{graphicx} % For including graphics
+\usepackage{caption} % For customizing captions
+\usepackage{float} % Improved interface for floating objects
+\usepackage{multirow, array} % For tables with multirow cells and advanced table formatting
+
+% Bibliography and referencing
+\usepackage[authoryear,sort]{natbib}
+
+\usepackage{framed} % Framed boxes
+\usepackage{wasysym} % Additional symbols
+\usepackage{adjustbox} % Adjust box size
+\usepackage{changepage} % For changing page layout
+\usepackage{xcolor} % Colored text
+\usepackage{abbrevs} % Abbreviations
+\usepackage{nicefrac} % For nice fractions
+\usepackage{amsmath}
+%\usepackage[style=apa,backend=biber]{biblatex} % Correct way to use biblatex with APA
+%\addbibresource{references.bib} % Add your bibliography file here
+\usepackage{setspace} % For line spacing
+\usepackage{soul}
+\usepackage{tabularx}  % Include in the preamble
+\usepackage{threeparttable}  % For table notes
+\usepackage{booktabs}        % For better table rules
+\usepackage[referable]{threeparttablex} % Enhanced version for better width control
+\usepackage{subcaption}
+\usepackage{pdflscape}
+%\addbibresource{references.bib}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{calc}
+\usetikzlibrary{positioning,calc,arrows.meta,shapes.geometric}
+\usepackage[title]{appendix}  %adding appendices
+
+
+
+\title{Psychological Barriers to Participation in the Labor Market: Evidence from Rural Ghana}
+\author{Leandro Carvalho, Damien de Walque, Crick Lund, Heather Schofield, \\ Vincent Somville and Jingyao Wei\thanks{This project was funded by the National Institutes of Health (5R01 AG076655), National Science Foundation (Grant number 2242588), The Holman Africa Research and Engagement Fund at the University of Pennsylvania, and The World Bank (Research Support Budget). Somville and Wei acknowledge funding from the Research Council of Norway (262675). The study was reviewed and approved by the Ghana Health Services (016-03-23), The University of Southern California (UP-18-00001), the University of Pennsylvania (6708), Cornell University (0148156), and the ``Regionale komiteer for medisinsk og helsefaglig forskningsetikk'' (587380) and the NHH IRB (23/21) in Norway. Simon Taye provided excellent research assistance. We are thankful to IPA Ghana and Presbyterian Agricultural Services who were instrumental in implementing the study.  The findings, interpretations, and conclusions expressed in this paper are entirely those of the  authors. They do not necessarily represent the views of The World Bank and its affiliated  organizations, or those of the Executive Directors of the World Bank or the governments they represent.} \thanks{Carvalho: University of Southern California, de Walque: Development Research Group, The World Bank, Lund: King's College London, Schofield:  Cornell University, Somville and Wei: Department of Economics, NHH Norwegian School of Economics.}}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+\singlespacing 
+Mental health conditions are strongly associated with lower participation in the labor market. Yet, little is known about the channels through which such conditions impact labor supply and income. To shed light on this process, we decompose it and investigate the relationship between mental health conditions and (i) job take-up, (ii) labor supply, output, and income conditional on being willing to work, and (iii) quit rates. We do so by randomly offering high-paying jobs when little other work is available in a population living in poverty, with high levels of depression and anxiety. We find that people suffering from depression and anxiety are twice as likely to decline a work offer outside of the home, but equally likely to be willing to work from home. However, among the job-takers working from home, depression and anxiety do not predict the actual amount of work completed, labor income, or quit rates. These findings suggest that a key channel through which mental health impacts labor market outcomes may be one's desire or willingness to work rather than performance on the job conditional on taking up work. Further, they suggest an important way to increase engagement with the labor market for those in poor mental health could be the provision of jobs that can be completed from home.  
+\end{abstract}
+
+\clearpage
+
+
+ 
+\clearpage
+
+\section{Introduction}
+Poor mental health is prevalent in low-income populations around the world and has been associated with low labor supply and earnings, creating the potential for negative feedback loops which may perpetuate poverty \citep{ridley_poverty_2020, world_health_organization_world_2022, hakulinen_mental_2019, biasi_career_2021, mojtabai_long-term_2015, lund_effects_2024, de_quidt_depression_2016,  barker_cognitive_2022, fuhr_delivering_2019, patel_lay_2011, weobong_sustained_2017}. While treating mental illness can have significant positive impacts on labor supply, these effects are not universal, with more muted or null results among some populations \citep{lund_effects_2024, barker_cognitive_2022,patel_poverty_2003, patel_healthy_2017, angelucci_economic_2024, baranov_maternal_2020,bhat_long-run_2022}. 
+
+These mixed results may have many potential drivers and little is known about the channels through which poor mental health reduces labor supply and income. In order to better understand how mental health conditions affect these important outcomes and begin to develop policy solutions, we decompose the process and study three of its key components: job take-up, labor supply, output, and earnings conditional on willingness to work, and exit (quit rates).
+
+To accomplish this goal, we begin by measuring mental health in a low-income population of women in rural Ghana. We focus on women in a low-income setting as they suffer disproportionately from mental health conditions and have lower and more variable labor force participation \citep{world_health_organization_world_2022}. Consistent with global patterns, mental health in this population is poor, with 39.7\% of individuals suffering from depression and 45.0\%  of individuals experiencing anxiety, relying on the ``moderate'' cutoffs for the corresponding mental health scales --- the Patient Health Questionnaire (PHQ) and the General Anxiety Disorder scale (GAD) \citep{phq9_2001,phq2_2003,spitzer2006brief}. 
+
+Next, to avoid selection due to search or endogenous job offers and isolate later portions of the causal chain, we make attractive job offers to these individuals. The work offered is similar to work opportunities often provided by governments with the aim of supporting the poor during the lean season in that it is part-time and low-skill. Further, the decision to work is high-stakes, with the income provided by the job accounting for about 48\% of median total household income. To further decompose channels that may drive the relationship between mental health and labor, we elicit the participants' willingness to do the same work in two different locations: when the work can be done from home, and when it requires participants to go to a nearby worksite.\footnote{The location of the worksite was either in the participant's village or a nearby village and participants were responsible for their own transportation, which is often by foot.}
+
+Our first key finding is that poor mental health (both anxiety and depression) are strongly associated with a reduced willingness to take up this attractive work opportunity outside of the home. As can be seen in Figure \ref{fig_mh_refusal}, participants who are anxious and depressed are roughly 54\% more likely to decline the job at the worksite than those who are neither anxious nor depressed (11.87\% vs. 7.71\%). These differences are not due to existing work obligations, with more depressed individuals being less likely to cite existing work as a reason to decline and more likely to cite inability or unwillingness to take up the work as the reason for refusal. However, this strong association between depression and anxiety and the willingness to work is only present in work offered outside of the home; correlations between either aspect of mental health and willingness to work from home are quite small in magnitude and statistically insignificant (Table \ref{cor_mh_signup}). This stark difference in take-up rates across work location for those in poor mental health is consistent with many of the symptoms of depression and anxiety, such as low energy levels or nervousness, which could make individuals less willing to leave the home. 
+
+While these results suggest the motivation to take up work is central to the relationship between poor mental health and low earnings in many contexts where work is primarily found outside of the home, it may not be the only driver. Poor mental health also has the potential to lower labor supply and output, %or productivity on the job 
+conditional on working, or to increase quit rates. To explore these mechanisms, we enroll a random sample of women who are willing to work from home ---34.87\% of them suffering from depression and 32.82\% from anxiety--- and randomly divide this sample into two groups: those who are offered to work from home (treated) and those who are not offered any work (control).\footnote{We did not offer jobs outside of the home both for logistical reasons and because those taking up the jobs are likely to be highly selected given the prior results.} 
+
+Unsurprisingly given that little work is available in the lean season, this random job offer greatly increases the likelihood of work among those offered the job, nearly quadrupling engagement with wage labor from 17\% to 60\% percent over the three months of work offered. Importantly to the questions at hand, the randomization also allows us to examine whether, conditional on being willing to take up a job, this random job offer is equally valuable to depressed and anxious individuals. In other words, among those willing to take up the work, do those with poor mental health have similar labor supply, output, earnings, and quit rates?\footnote{The choice to take up the work is endogenous and could lead to selection. However, in our context, willingness to work from home appears to be uncorrelated with mental health. Further, as individuals cannot and should not be compelled to work, examining outcomes conditional on willingness to work is the more policy-relevant and ethical approach.} 
+
+To study these channels, we examine the labor supply, output, and earnings of participants who were randomly provided with jobs, including heterogeneity by baseline mental health. Participants report bi-weekly on days worked and earnings in surveys. This data is combined with administrative data on work completed as a part of the study. We find that, although we cannot rule out small effects, in this group depressed and/or anxious individuals are just as likely to supply labor and produce as much as those in better mental health, and correspondingly earn similar amounts (Table \ref{treat_mh_workdummy}). Further, poor mental health is associated with a small delay (improvement) in the time to quitting but does not predict quit rates overall. In short, we conclude that depression and anxiety are likely to impede labor market success primarily because those with mental health conditions are much less likely to take up new labor opportunities --- which are primarily available outside of the home in the current context. However, conditional on taking up work that can be done from the home --- which is uncorrelated with baseline mental health --- mental health does not impede labor supply, output, or earnings or increase quit rates once on the job. 
+
+
+Beyond individual effects, we find that poor mental health can create barriers to economic opportunity that extend to other household members. Participants with depression and anxiety were not only less likely to take up work opportunities themselves but also significantly less likely to indicate that other adult household members are available for work, both for work-from-home and for work-from-site opportunities. When asked about their decisions regarding female co-household members specifically, those with poor mental health were more likely to cite the domestic responsibilities of the other adult as a barrier to their work participation, despite having similar numbers of children as other participants. These findings suggest that mental health challenges have the potential to create household-level constraints on labor market participation, potentially amplifying the economic consequences of poor mental health beyond the individual affected.
+
+This paper contributes to three broad literatures. First, we contribute to research examining the relationship between mental health and labor market outcomes \citep{ridley_poverty_2020, hakulinen_mental_2019, biasi_career_2021}. While prior work has documented associations between poor mental health and reduced labor supply and earnings, we advance this literature by decomposing the channels through which mental health affects labor outcomes, which is important both to understanding the contexts in which this relationship will be stronger or weaker and to begin to consider appropriate policy responses. Our research highlights the central role that reduced job take-up, rather than lower labor supply, reduced output, or higher quit rates on the job, may play in the relationship between poor mental health and reduced earnings. 
+
+Second, we contribute to the literature examining low labor force participation in low- and middle-income countries. While much of this work has focused on demand-side constraints such as job availability and search frictions, or supply-side factors like skills and transportation costs, we highlight how poor mental health may create additional barriers to labor force entry \citep{rossi_relative_2022, collier_cost_2016,goldberg_demand-side_2020, carranza_job_2024}. Our evidence demonstrates that even when attractive job opportunities are directly offered, poor mental health ---which is highly prevalent in this context--- substantially reduces take-up, suggesting an important but previously overlooked constraint on engagement with the labor force. Further, the impact of poor mental health may extend beyond the impacted individual to reduced labor supply for others in the household who step in to help with household responsibilities. 
+
+Finally, we inform the literature on workfare programs, which are widely used as anti-poverty tools in low-income countries \citep{besley_workfare_1992, bertrand_workfare_2021, murgai_is_2016,imbert_labor_2015}. These programs typically operate through standing job offers outside of the home, assuming that those most in need will self-select into the work. Our findings suggest that poor mental health ---which is disproportionately prevalent among the poor--- may limit engagement with these programs precisely among those they are intended to help. This has important implications for program design: screening for mental health conditions and providing complementary mental health interventions, or innovating to provide other targeted intervention designs such as work from home arrangements, may be necessary to achieve the full potential of workfare as an anti-poverty tool.
+
+The remainder of the paper begins with background on the context and study design in Section \ref{sec_context_design}. The empirical approach is described in Section  \ref{sec_empirical approach}. Section \ref{sec_results} provides results while Section \ref{sec_conclusion} concludes. 
+
+
+\section{Context and study design}\label{sec_context_design}
+Our study is conducted in northern Ghana, in rural areas outside of the city of Tamale. The poverty rate in this area is high, with over 70 percent of people  defined as multi-dimensionally poor in the study districts \citep{ghana_statistical_service_multidimensional_2023}. Similar to many other areas with high poverty rates, mental health conditions are relatively high in the region: \citet{ae-ngibise_prevalence_2023} observe a large prevalence of mental, neurological and substance use among outpatients of primary healthcare facilities (with a prevalence of probable depression of 15.6\%), and \citet{barker_cognitive_2022} find that about 58\% of the general population suffers from symptoms associated with some degree of psychological distress \citep[compared to about 13 percent in the United States according to][]{Dhingra_2011}. \\
+
+\textbf{Timing --} The study is conducted in the lean season, after planting and before harvest of the major staple grain, maize. The lean season offers limited work opportunities, especially opportunities for wage labor. Because many households are running low on grain and have limited income, this time is typically a period of relatively high stress. 
+The study occurred in two phases over a period of four months. Phase 1, which occurred in the first month, examined the participants' willingness to take up new work opportunities both at worksites and from home. Phase 2, which spanned three months following Phase 1, offered randomly selected individuals from the group willing to work from home the opportunity to work from home stitching bags as described below. Phase 2 was divided into six 2-week periods with data collection on mental health, labor supply and earnings collected in face-to-face interviews at baseline and endline, and via phone surveys at the end of each period. \\
+
+\textbf{Work opportunity --} We offer to randomly selected participants the opportunity to stitch bags ---allowing us to observe output each period--- at their home. Prior to beginning their work, participants are trained over 3 days by professionals to ensure they are able to meet the minimum quality standards. Materials for the bags are dropped off at the beginning of each two-week period and the finished bags are picked up three times throughout the period. Payment is piece-rate (GHS 12 per completed bag) and made immediately upon the pickup of the finished product. 
+
+The jobs offered are an important potential source of income in this context. Participants are offered an average of GHS 108 (around 7.56 US dollars) each two-week period. The median household income is GHS 450 (USD 31.5) per month, equivalent to GHS 225 per 2-weeks period. The job offers therefore have the potential to increase household income by 48\% on average. \\
+
+\textbf{Phase 1 --} This first phase starts with the recruitment of participants in 30 rural communities with limited work opportunities during the lean season. The communities are distinct villages with 115 households on average. In each community, we target households using a random walk procedure. To be eligible, households must have five or fewer adults and a total household size of less than 16 members.\footnote{This criteria was set to ensure that we could survey the complete households in a reasonable time, and because in the second phase, we aimed to offer jobs that would substantially improve the economic situation of the participating households.} When a household is selected, the enumerator speaks to the head of household (or any adult member aged 18 or older) to identify eligible household members. If both the household head and his spouse are present, one of them is randomly selected to be the main respondent. If either the head or his spouse are absent, the enumerator randomly selects one of the present adult household members to respond. The selected respondent is then asked to provide basic socio-demographic information about the household. Each respondent is then read a description of the work opportunity and asked if they would be willing to do such work, both for work from home and work outside of the home.\footnote{The job offer is described as: ``Some of the study participants will be offered work for a period of 12 weeks; others will not be offered any work. Study participants who are offered work will work stitching bags. Each bag will be paid GHS 12. No previous experience is required. We will provide training. If your household is selected, only one member from your household will be selected to participate in the study.''} They are aware that not all individuals would be offered the work, but that it would only be offered to those interested in taking it up. Next, respondents are asked to report whether other adults in their household would be interested in the job or not, again responding both for work from home and for work outside of the home. Finally, participants also respond to the PHQ-2 screening tool, assessing depression, and the GAD-2 module, assessing anxiety. 
+The sampling  process is summarized in Figure \ref{fig_phase1}. The random sampling in the targeted communities results in 838 eligible households. The respondent is a female in 514 households and a male in the other 324 households. Twenty-three female respondents are then excluded due to age (<18 or >65). The 491 eligible female respondents then report their own willingness to work as well as the willingness to work of 500 other female household members. All 491 female respondents to this survey in Phase 1 are considered in our ``willing-to-work sample'', used to assess the relationship between mental health and the willingness to take-up new job offers.\footnote{We consider only women in this sample given that we offer jobs exclusively to women in Phase 2.} 
+
+\begin{figure}[H]
+\caption{Phase 1 Sample} \label{fig_phase1}
+\centering
+\begin{tikzpicture}[node distance=1.5cm, scale=0.8, transform shape]
+  \node[draw, align=center] (A) {838 Eligible Households};
+\node[draw, text width=3cm, align=center, below=2cm of A, xshift=-3cm] (B) {514 female respondents};
+\node[draw, text width=3cm, align=center, below=2cm of A, xshift=3cm] (C) {324 male respondents};
+\node[draw, text width=14cm, align=center, below=5cm of A] (D) {After age-based screening, 491 eligible female respondents report their own \\ willingness to work, the willingness to work of 500 female  household \\ members, and respond to the PHQ-2 and GAD-2};
+\draw[->] (A.south) -- (B.north);
+\draw[->] (A.south) -- (C.north);
+\draw[->] (B.south) -- (D.north);
+\end{tikzpicture}
+\end{figure}
+
+\textbf{Phase 2 --} The sampling and randomization in this phase are summarized in Figure \ref{fig_phase2}. Study participants in this phase are first sampled through the process described for Phase 1 participants. To be eligible, individuals must be non-pregnant women aged 18-65 years who are willing to work: in Phase 1, they either indicated their willingness to work directly (N=491), or they are indicated as willing to work by their household's respondent (N=1,076).\footnote{Among the 1,076 women indicated as willing to work by others, 500 were indicated by the female Phase 1 respondent and an additional 576 were indicated by a male respondent.} In total, out of these 1,567 women, 1,447 are willing to work from home. Among these 1,447 women, we randomly select 390 women to constitute the final study sample for Phase 2. Following the random selection, we return to the households including those Phase 2 participants to conduct a baseline survey. The baseline survey includes measures of labor supply, income, consumption, and mental health (PHQ-8, GAD-7, Cohen‘s Perceived Stress Scale, and the Penn State Worry Questionnaire). Additionally, the participants are asked to confirm again their willingness to work, which all did. The 390 individuals completing this baseline survey are considered our ``interested sample''.\footnote{In a given household, the participant from Phase 1 is not necessarily the same person as the ``interested'' participant from Phase 2. They overlap in 156 cases. This is because the Phase 2 participant was randomly selected among all eligible women from Phase 1 who signaled interest in the job, whether they were the Phase 1 respondent herself or not.} Then, of the 390 ``interested'' participants, we randomly make job offers to work from home to 320 of these participants (our treated group) and not to the other 70 participants (our control group). Inflating the size of the treated group is essential, since we aim to compare people with different mental health conditions within the treated group.\footnote{We made three different job offers in the treated group. In all three versions the participants had the same expected workload and income over the course of the entire study, but one group had the same income in every period, the second group had variable income across time that was known in advance, and the last group had both variable and uncertain income. As these differences are not relevant to the questions of interest in this paper, we aggregate these groups together in our analyses.} 
+
+Both treated and control participants in Phase 2 are interviewed by phone every two weeks during the study. Both groups also have a final in-person interview (endline survey) once the work is completed. During the bi-weekly phone interviews we elicit labor supply, income, and consumption measures as well as the participant's mental health (GAD-2 and PHQ-2). Additionally, treated participants have administrative data collected on their completion of bags each period, noting both the number and quality as well as the payment made for the work. The endline interview includes the same measures of labor supply, income and consumption, and the mental health measures used in the baseline. Attrition over the course of Phase 2 was minimal: only six participants did not complete the endline survey (3 in each arm).
+
+\begin{figure}[h]
+\caption{Phase 2 sample and randomization}\label{fig_phase2}
+\centering
+\begin{tikzpicture}[
+   node distance = 1cm,
+   box/.style = {rectangle, draw, text centered, minimum width=3cm}
+]
+
+% Initial nodes evenly spaced
+%\node[box] (A) at (-4,0) {491 Directly Recruited Women};
+%\node[box] (B) at (4,0) {1076 Indirectly Recruited Women};
+
+% Flow nodes
+\node[box] (C) at (0,0) {1,447 Eligible Women};
+%\node[box] (D) [below=of C] {1447 Accepted Offer};
+\node[box] (E) [below=of C] {390 Randomly Selected};
+
+% Treatment/Control nodes
+\node[box] (F) [below left=1cm and .3cm of E] {320 Offered work (Treated)};
+\node[box] (G) [below right=1cm and .3cm of E] {70 Not offered work (Control)};
+
+% Final nodes
+%\node[box] (H) [below=of F] {317 Endline};
+%\node[box] (I) [below=of G] {67 Endline};
+
+% Arrows
+%\draw[->] (A) -- (C);
+%\draw[->] (B) -- (C);
+\draw[->] (C) -- (E);
+%\draw[->] (D) -- (E);
+\draw[->] (E) -- (F);
+\draw[->] (E) -- (G);
+%\draw[->] (F) -- (H);
+%\draw[->] (G) -- (I);
+
+\end{tikzpicture}
+\end{figure} 
+
+\\
+
+\textbf{Measurement --} Mental health is proxied by depression, assessed using the Patient Health Questionnaire (PHQ), and anxiety, assessed using  the General Anxiety Disorder Questionnaire (GAD)  \citep{phq9_2001,phq2_2003}. Both the PHQ and the GAD are among the most frequently used scales to screen for depression and anxiety globally. We use the 8-item version of the PHQ and the 7-item version of the GAD in the baseline and endline of Phase 2, and the 2-item version of the PHQ and GAD in Phase 1 and in the phone surveys of Phase 2. To ensure consistent administration of the items, each question in the survey was translated to the local language, back translated to ensure fidelity, and then recorded. The enumerator explained the scale, played the recording of each item one by one, and recorded the participant's responses.
+
+The main outcomes of interest are: the women's willingness to work (Phase 1), and their labor supply, output, earnings, and quit rates (Phase 2). Willingness to work, both for the respondent and other household members, is captured in Phase 1 as explained above. 
+
+Participants in the ``interested sample'' in Phase 2 report their labor supply and earnings over the past ten days in all surveys. They are also asked to report the labor supply and earnings of other  household members over the age of 12 for the same period. Not all participants includ their study earnings in their reported earnings. In the main tables, we correct the reported earnings to always include the study earnings. The study work is organized in periods of two weeks and the survey corresponding to each period is administered in the last four days of the two week period. The ten-day recall therefore allows us to capture labor and income during that period only and does not cover previous periods.\footnote{While the 10-day recall omits 4 days of the period, the timing of the survey is random across treated and control participants, such that ``missing'' days are balanced.}  \\
+
+
+\textbf{Partnerships --} The study is implemented in partnership with Innovations for Poverty Action (IPA) Ghana, who collect the data, and Presbyterian Agricultural Services (PAS), who manage the hiring and work-related tasks \citep[in a fashion similar to][]{banerjee_does_2020}. \\
+
+
+\textbf{Safety procedures --} Given that we assess participants' mental health status, we implemented safeguards for participants showing severe mental distress. We establish a referral system in partnership with the  Mind 'N' Health Foundation that provides phone counseling services in the local languages. The support services are available free of charge to the participants. The services are presented sensitively as ``a person to talk with about any concerns that are on your mind'' to address potential stigma around mental health. Mind 'N' Health's providers include psychologists, psychology therapists, certified counselors, and counseling experts. Additional referral procedures to physical facilities are in place in case of concerns around self-harm, though these were not needed during the study. \\
+
+
+\textbf{Summary statistics.} \\
+\textit{Phase 1.} As noted earlier, mental health is relatively poor in this population: Figure \ref{fig:mh_dist} plots the distribution of depression and anxiety scores among women in Phase 1. 40\% of the women are above the standard cutoff for further screening for depression, and 45\% are above the standard cutoff for further screening for anxiety. 
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{plot/fig.1.2.mh_distribution_preview.png}
+   \caption{Distribution of Mental Health Scores Among Female Participants}
+   \label{fig:mh_dist}
+   \flushleft
+   \textit{Note: The figure shows the distribution of depression scores (PHQ-2, left) and anxiety scores (GAD-2, right) of the Phase 1 sample. The vertical dashed lines indicate clinical cutoffs ($\geq$3), above which scores are considered to indicate elevated symptoms of depression or anxiety.} 
+\end{figure}
+
+Table \ref{tab_sum_stat} reports basic summary statistics describing the Phase 1 sample. Column 1 provides the mean (standard deviation) and Columns 2 and 3 provide the coefficient of a simple ordinary least squares estimation between each variable shown in the Table and the participant's PHQ-2 (depression) and GAD-2 (anxiety), respectively, as well as the associated standard errors. 
+
+Households in this area are large, with an average of eight people. The average household earns GHS 527 (roughly 35 USD) per month at the time of the interview, with earnings winsorized at the 95th percentile. 74\% of the adult members report some paid or unpaid work (excluding domestic labor) in the past 12 months, the majority being self-employed or working for the family business. The average age is 37 years old. 
+
+The PHQ-2 does not correlate with these baseline variables, except for the type of work: a higher PHQ-2 score (worse mental health) is associated with a greater likelihood of agricultural labor and a lower likelihood of self-employment. The GAD-2 shows similar correlations with the types of jobs. In addition, women who are heads of household experience more anxiety.
+
+
+
+\begin{table}[h ]
+\centering
+\caption{Summary Statistics -- Phase 1} \label{tab_sum_stat}
+
+ \adjustbox{max width=.75\textwidth}{
+\begin{threeparttable}
+ 
+ \input{table/updated/table_g.1_mh_hh_summary}
+ 
+  \begin{tablenotes}
+\item Note: This table presents summary statistics for Phase 1 of the study and their correlations with mental health measures (PHQ-2 and GAD-2). Standard deviations (SD) are reported in parentheses in Column (1), and standard errors (SE) are reported in parentheses in Columns (2) and (3). Income is measured in GHS and is winsorized at the 95\textsuperscript{th} percentile. PHQ-2 and GAD-2 refer to the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. ``Employed - 12 months'' indicates employment status in the past 12 months. ``Works in own/HH firm'' indicates self-employment or employment in a household enterprise. ``Works in Agriculture'' indicates primary employment in agricultural activities. ``Employed for Wages'' indicates formal wage employment. ``Head of household'', ``spouse of head'', and ``other relation to head'' are mutually exclusive categories indicating the respondent's relationship to the household head. Correlations in Columns (2) and (3) are calculated using standardized mental health variables. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+
+\textit{Phase 2.} In Table \ref{tab:summary_statistic_baseline}, we report summary statistics describing our Phase 2 sample at baseline, separately for the treated and control groups. Column 3 provides a p-value for a test of equality of means between the two groups. Treatment and Control are similar on the all baseline covariates tested, suggesting the randomization was successful. 
+
+%%% ST: martial status was not collected at baseline; i could include in census table instead
+\begin{table}[h]
+\caption{Summary Statistics -- Phase 2}
+\centering
+\label{tab:summary_statistic_baseline}
+\adjustbox{max width=.7\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_i.1_mh_hh_summary}
+
+\begin{tablenotes}
+\item Note: This table presents summary statistics for Phase 2 of the study, comparing treatment and control groups across household and respondent characteristics. The sample consists of 390 observations (320 treatment, 70 control). For each variable, column (1) shows the mean and standard deviation (in parentheses) for the treatment group, while column (2) shows the same statistics for the control group. Column (3) presents p-values from tests of equality between treatment and control means.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\clearpage
+
+\section{Empirical approach}\label{sec_empirical approach}
+\subsection{Phase 1 -- Mental health and willingness to work}
+As the first step in the chain of employment, we begin by examining women's willingness to work when facing new opportunities. We start by investigating whether anxiety and depression predict one's willingness to work, keeping in mind that all the participants are offered the exact same simple jobs with a relatively high pay, and that they are  asked for their willingness to work in two scenarios: either at a nearby workplace or from home.
+
+We estimate the following equation:
+\begin{equation}\label{eq_1}
+\begin{aligned}
+Y_{i} &= \alpha_0 + \alpha_1  \text{Mental health}_{i}  + \alpha_2 \text{X}_{i} + \epsilon_{i}
+\end{aligned}
+\end{equation}
+
+Where $Y_{i}$ is a binary variable equal to one if individual $i$ is willing to work and to zero otherwise.  We estimate Equation (\ref{eq_1}) separately for the willingness to work from home and for the willingness to work from a worksite. ``Mental Health'' is one of the two mental health variables measured in Phase 1 -- PHQ-2 or GAD-2 -- standardized for ease of interpretation, or an average of the two standardized variables. $\text{X}_t$, is a vector of controls including the order of the willingness to work questions (which was randomized), whether the household head or his spouse were both present or not (which influenced the selection of the respondent, as explained in Section \ref{sec_context_design}), the household size and number of adults, age of the respondent, and marital status. We select these controls because they are unlikely to be influenced heavily by the participant's mental health status. Uncontrolled versions of the regressions omitting all demographics are included in the appendix. We report the values of $\alpha_1$ for different measures of mental health in Table \ref{cor_mh_signup}. Panel A presents results about work from home decisions and Panel B presents results about working from a local worksite. All regressions use robust standard errors. 
+
+To calculate the correlations between mental health and the reported willingness to work of \textit{other household members}, we adjust Equation (\ref{eq_1}) and estimate: 
+\begin{equation}\label{eq_1_others}
+\begin{aligned}
+Y_{i,j} &= \beta_0 + \beta_1  \text{Mental health}_{i}  + \beta_2 \text{X}_{i} + \zeta_{i}
+\end{aligned}
+\end{equation}
+Where $Y_{i,j}$ is a binary variable equal to one if respondent $i$ says that individual $j$ is willing to work and to zero otherwise. The other variables remain as described previously and results are once again disaggregated by work location in two panels. In this specification, standard errors are clustered at the respondent level, given that each respondent can report the willingness to work of several household members.
+
+\subsection{Phase 2 -- Mental health and the effects of job offers}
+In the second phase, we randomize job offers among the participants who are willing to work from home. We estimate the effects of the job offers on labor supply, output, earnings, and quit rates as well as whether mental health mediates the effects of these job offers. Specifically, we estimate:
+\begin{equation}\label{eq_2}
+\begin{aligned}
+Y_{i,t} &= \gamma_0 + \gamma_1 \text{Job offer}_{i,0} + \gamma_2 \text{Mental health}_{i,0}  + \gamma_3 \text{Mental health}_{i,0}*\text{Job offer}_{i,0}    \\
+& + T_t + \gamma_4 \text{X}_{i} + \zeta{i,t}
+\end{aligned}
+\end{equation}
+
+Where $Y_{i,t}$ is outcome $Y$ for individual $i$ in period $t$, ``Job offer'' is equal to one if $i$ was randomly offered a job, ``Mental Health'' is one of the mental health variables measured in period 0 (the baseline), and $\text{T}_t$ are period fixed effects. $X$ controls for the same demographics as in Eq. \ref{eq_1}, but omits the controls for order effects and presence of another household member as they are not relevant in Phase 2. When we estimate Equation (\ref{eq_2}), we cluster standard errors at the household level given the multiple periods.
+
+
+
+\section{Results}\label{sec_results}
+
+Both anxiety and depression are strong predictors of the willingness to work, with marked differences in refusal rates among those with greater anxiety, greater depression, or both, compared with individuals in good mental health (Figure \ref{fig_mh_refusal}). Specifically, high anxiety (depression), increases refusal rates by 1.3 (2.9) percentage points or 17.4 (29.7)\%. Experiencing both high depression and high anxiety increases refusal rates by 4.16 percentage points or 54.0\%. 
+
+In Table \ref{cor_mh_signup}, we test the statistical significance of these correlations. We find that the PHQ-2 and the GAD-2 strongly correlate with the decision to accept a job offer if the work must be done at a worksite, but not if it can be done from home. On average, an increase of one standard deviation on the PHQ-2 scale (1.68 points) is associated with a reduction of 3.0 percentage points in the likelihood of accepting the offer at a worksite. The association with the GAD-2 (SD = 1.64 points) is of a similar magnitude. The association between the index of mental health and willingness to take up work is slightly larger in magnitude, 3.7 percentage points, but not significantly different than the individual measures of mental health. In Appendix Table \ref{cor_mh_signup_alternate}, we show that these estimates are robust to using binary indicators corresponding to the thresholds for high depression and anxiety (as in Figure \ref{fig_mh_refusal}) and that the coefficients are of similar but slightly larger magnitude if demographic controls are omitted (Table \ref{cor_mh_signup_nocontrol}). 
+
+These results are in strong contrast to the associations between mental health and willingness to take up work from home. The point estimates when considering work from home are both small in magnitude ---none larger than 0.4 percentage points--- and variable in sign. These correlations suggest that the impact of mental health on work outcomes may vary substantially with the context in which the work is provided, and may exacerbate effects in low income settings where remote work is relatively rare.  
+
+
+ \begin{figure}[H]
+     \centering
+     \includegraphics[scale=0.95]{plot/refuse_work_sem.pdf}
+     \caption{Mental health and work offer refusal rates}\label{fig_mh_refusal}
+     \flushleft
+         \small\textit{Note: The bar heights show the percentage of participants who refuse the work offer (N = 982). The spikes correspond to the standard errors of the means. High anxiety corresponds to a GAD-2 score of three or more. High depression corresponds to a PHQ-2 score of three or more. }
+   \end{figure}
+
+\begin{table}\caption{Correlation between mental health and willingness to work}\label{cor_mh_signup}
+\centering
+\begin{threeparttable}
+\input{table/updated/table_a.5_mh_signup}
+\begin{tablenotes}
+\small \item Note: PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. ``Willingness to work from home'' and ``Willingness to work outside'' are binary indicators for whether the respondent accepted the respective work offers. All specifications include controls for whether the work from site question was asked first (the order was randomized), whether both the household head and spouse were present, the age of the respondent, their marital status and the number of adults and number of household members in the household  at the time of the survey. The p-value in the last row tests the equality of coefficients between Work from Home and Work from Site specifications within each column. Robust standard errors are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+To further understand these correlations, we asked participants who were not willing to work why they did not want to take up the job. In Table \ref{cor_mh_signup_reasons}, we correlate a high PHQ-2 score and GAD-2 score with the reasons given for refusing the work offer. Notably, people with higher depression and anxiety scores are significantly less likely to say that they already have paid work as a reason for refusing job offers. Much of this difference appears to be accounted for by a positive association between poor mental health and being unable or unwilling to work, though these associations are less precise and the relationship is only statistically significant at the 10\% level for depression. The correlation with the other reasons such as a lack of transportation or student status are generally weaker and not statistically significant.
+
+\begin{table}\caption{Association between depression and reasons for work refusal}\label{cor_mh_signup_reasons}
+\centering
+\begin{adjustbox}{width=\textwidth}
+\begin{threeparttable}
+\input{table/updated/table_b.3_mh_signup_reason}
+\begin{tablenotes}
+\item Note: This table examines how a respondent's mental health relates to their stated reasons for why they would not accept either work-from-home or work-from-site opportunities. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. The sample is restricted to respondents who declined work opportunities. Each column represents a different reason for refusing work: (1) already having paid work, (2) household work responsibilities including taking care of children, (3) being unable or unwilling to work including sickness, old age, and unwilling to work, (4) being a student, and (5) transportation difficulties (only relevant to work outside). Reason Share indicates the proportion of respondents who cited each reason for refusing work. All specifications include controls described in Table \ref{cor_mh_signup}. Standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+\end{adjustbox}
+\end{table}
+
+The evidence that the lack of take-up is not driven by better work opportunities is also bolstered by the evolution of income over time in the various groups. As can be seen in Figure \ref{vip_earnings_sign_up}, those offered a job in the study immediately earn roughly 100 GHS per period, while both those who were interested and not offered the job and those who were not interested in taking up the work have average incomes of approximately 10 GHS per period and are statistically indistinguishable. These differences remain relatively constant over time. If refusals were driven by other better labor opportunities we would expect the ``not interested'' group to have both a higher level of income and, likely, a stronger upward trend in income. As neither of these conditions is met, it suggests that those who opted not to take up the offered work did not do so due to other better labor opportunities. 
+
+
+In short, we find that both depression and anxiety are strongly predictive of turning down a lucrative job opportunity when that opportunity is outside of the home, but are not associated with any differences in the desire to take-up work in the home. The differences in engagement with work outside of the home are large, roughly doubling refusal rates among those who are both anxious and depressed. Further, the lack of engagement with work outside of the home does not appear to be driven by the availability of better opportunities for work elsewhere. Taken together, these results suggest that a lack of willingness to engage with work that is typically available in low-income contexts may be an important driver of the gap in labor market outcomes between those in good and poor mental health. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.95]{plot/figure_2_imputed_scatter.pdf}
+    \caption{Willingness to work and total earnings during the study}\label{vip_earnings_sign_up}
+    \flushleft
+        \textit{Note: The figure shows the means (and 95 percent confidence intervals around the means) of earnings (GHS, on the vertical axis) over time by period, for three groups of participants: 1) those who are not willing to work, 2) those who are willing to work but do not receive a job offer, and 3) those who are willing to work and receive an offer.}
+  \end{figure}
+
+
+\subsection{Mental health and behavior on the job}
+Next, we examine the relationship between mental health and performance on the job among those willing to work. To accomplish this goal, we randomly allocate individuals (in both poor and good mental health) to receive jobs or not, while surveying both groups every two weeks. We estimate the effect of the job offers on labor market outcomes (intention-to-treat), and whether depression and anxiety mediate these effects. Notably, the work offered is work from home, suggesting that selection into the job based on mental health is less likely to be a concern given the lack of association between mental health and job take-up noted in Phase 1. 
+
+
+Table \ref{treat_mh_workdummy} presents the results of estimating Equation \ref{eq_2}. Panel A examines work status using a binary variable for whether the individual reports working that period, either as a part of the study or outside of it. Panel B examines self-reported days worked, imputing a zero for individuals who did not work that period. Panel C studies output (the number of bags produced, which is mechanically zero among control participants). Panel D studies labor income, again imputing a zero for individuals who reported no work during the period either as a part of the study or outside of it. 
+
+We begin by examining the impact of a job offer on each of these variables in Column 1. We then expand to include heterogeneity in the impact of a job offer by mental health status. The mental health status measures are standardized baseline measures of depression (Col. 2), anxiety (Col. 3), and an average of the two standardized measures (Col. 4). These interactions allow us to test whether the participants' baseline mental health mediates the effect of the job offers. 
+
+The interaction terms are moderate in magnitude and never statistically significant. For example, in the upper panel, the point estimate on the interaction term of the mental health index and having a job offer (-0.019) is roughly 4.4\% of the main effect of being offered a job among those in good mental health (0.429). Similarly, for earnings, the coefficient on the interaction term for the index is -3.9 GHS compared to a mean increase of 102 GHS when offered a job. Focusing on bags produced, those in poor mental health the point estimates are in the opposite direction, with those in poor mental health producing 2\% more bags. In short, with the consistently small point estimates of variable sign, we cannot reject the hypothesis that baseline mental health does not affect the benefits from being offered a job. However, the limited sample size also means it is not possible to rule out modest effects on these outcomes. Findings are similar if we instead use binary measures for mental health (Table \ref{treat_mh_workdummy_nocontrols}), the long-form measures of mental health -- PHQ-8 and GAD-7 (Table \ref{treat_mh_workdummy_full}), or omit demographic controls (Table \ref{treat_mh_workdummy_no control}).
+
+
+\begin{table}\caption{Work offers, labor supply, income and mental health}\label{treat_mh_workdummy}
+\centering
+\adjustbox{max width=.75\textwidth}{
+\begin{threeparttable}
+:
+\input{table/updated/table_c.1_mh_work_bl}
+\begin{tablenotes}
+\item Note: This table examines the relationship between mental health and labor market outcomes. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. The table presents four panels: Working (binary indicator), Days Worked (count of days), Bags produced (count of bags in each period), and Work Income (combines study and non-study income, in local currency units, winsorized at the 95th percentile).  ``Job offer'' is a binary indicator for whether the respondent is randomly selected to be offered a job.  All regressions include period fixed effects as well as basic demographic controls as outlined in Section \ref{sec_empirical approach}. The standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+Finally, to examine how mental health relates to work retention, Table \ref{cor_mh_quit} presents correlations between mental health indicators and quit rates among those offered a job stitching bags. We use two measures of quitting: non-submission of bags in the final period and a variable indicating which period was the last period in which the participant submitted any bags, providing a measure of the timing of quitting. Roughly 8\% of individuals quit on or before the final period. Consistent with our previous findings on mental health and job performance, we find no significant relationship between mental health measures and quit rates in the final period. Notably, there is a small positive association between the final period in which an individual turns in any work and poor mental health: those who have 1 standard deviation worse mental health actually persist 0.15 periods longer. However, this association is only marginally significant for anxiety and the mental health index and is insigificant for depression alone.  
+
+
+
+
+\begin{table}[H]
+\caption{Association between baseline mental health and quit rate}
+\label{cor_mh_quit}
+\centering
+\adjustbox{max width=.75\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_h.0_mh_quit}
+\begin{tablenotes}
+\item Note: This table examines the relationship between baseline mental health measures and job retention/quitting behavior among participants that are offered the work. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. In the top panel, the outcome is a binary variable indicating if a participant quit before the endline. The outcome in the bottom panel is the number of periods a participant worked before quitting. The standard errors, clustered at the individual worker level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\subsection{Spillovers of mental health conditions to other household members.}
+In each household, the phase 1 participant is also asked to report which of the other adult household members would be interested in the job offer. We next investigate whether the mental health of the respondent has the potential to impact other household member's labor supply through this decision. 
+
+Table \ref{cor_mh_signup_others} presents the results of regressions of the reported willingness to work of individuals \textit{other than the respondent} as reported by the respondent on the mental health of the respondent, using the same standardized mental health measures as in previous analyses. More depressed respondents are significantly less likely to report that other's in their household would be willing to take up the work offered, whether that work occurs in the household or outside of it. These effects are large, the refusal rates of participants who are above the thresholds for depression and anxiety  are almost twice as high as the refusal rates of participants who are neither anxious nor depressed (a 8 percentage points increase from a base of 9.3\%). For work outside the home, more anxious participants also report reduced willingness for others to take up work, with a similar magnitude to those who are more depressed. However, the magnitude of the association falls and becomes insignificant for work from home for others. Finally, the average of the two mental health measures is also a significant predictor of refusal rates, with a 2.8 to 4.2 percentage point reduction in the willingness for others to take up work. These effects are robust to using binary measures of mental health (Table \ref{cor_mh_signup_others_alternate}). 
+
+Table \ref{cor_mh_signup_reasons_others} provides a suggestive explanation for this pattern: When the participant chose not to sign-up a female co-household member, they were also asked to tell us why. Despite having a similar number of children in the houses of those in good or poor mental health, participants with poor mental health are significantly more likely to state that their female co-household member must stay home and care for the children. Further, as shown in the lower panel of Table  \ref{cor_mh_signup_reasons_others}, the correlations between mental health and the reason for declining work for others are not significantly impacted when we control for the number of young children. One plausible interpretation of these findings, is that participants suffering from mental health conditions are less willing to let other women work because they would not want to take on the domestic duties of these female co-household members or are worried they will need the other household member to care for them. In contrast with the findings reported in Table \ref{cor_mh_signup_reasons}, the participant's mental health does not correlate with stating ``unwilling or unable'' as a reason to decline the job offer on the behalf of other members, suggesting that they are not declining because their co-members are also suffering from mental health conditions. 
+
+These additional findings about spillovers to work for other individuals in the household are important given the high stakes of these job offers. In a context of extreme poverty, people suffering from depression and anxiety do not only refuse income opportunities for themselves, but also for other women in their households, de facto preventing them from receiving the work and corresponding income. Our findings thus demonstrate how mental health challenges can create barriers to economic opportunity that extend beyond individual decision-making to entire households. These findings do not seem to be specific only to the context at hand, rather they are very consistent with the observations made by \citet{Lund_2019} in six different countries. 
+
+\begin{table}[H]\caption{Association between mental health and work offer acceptance for others}\label{cor_mh_signup_others}
+\centering
+\begin{threeparttable}
+\input{table/updated/table_a.6_mh_signup_others}
+\begin{tablenotes}
+\item Note: This table examines how a respondent's mental health influences their assessment of other household members' availability for work, showing that respondents with higher depression and anxiety symptoms are less likely to indicate work availability for other adult household members. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the respondent's own Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. The top panel shows how respondent's mental health correlates with their assessment of other household members' availability for work-from-home opportunities, while the bottom panel shows the same for work-from-site opportunities. The p-value in the last row tests the equality of coefficients between Work from Home and Work from Site  within each column. Standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[H]\caption{Association between depression and reasons for work refusal for others}\label{cor_mh_signup_reasons_others}
+\centering
+\begin{adjustbox}{width=\textwidth}
+\begin{threeparttable}
+\input{table/updated/table_b.4_mh_signup_reason_other}
+\begin{tablenotes}
+\item Note: This table examines how a respondent's mental health relates to their stated reasons for why other household members would not accept either work-from-home or work-from-site opportunities. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the respondent's own Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the mean of both standardized scores. ``\# children'' is the number of household members who are 12 years old or younger. Each column represents a different reason for refusing either type of work opportunity: (1) already having work, (2) household work responsibilities, (3) being unable or unwilling to work, (4) being a student, (5) transportation difficulties (only relevant to the work outside), and (6) uncertainty about the person's interest. Reason Share indicates the proportion of respondents who cited each reason for other household members' work refusal.  Standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***. 
+\end{tablenotes}
+\end{threeparttable}
+\end{adjustbox}
+\end{table}
+
+
+\section{Conclusions}\label{sec_conclusion}
+
+This study decomposes the relationship between mental health and labor market outcomes into distinct components: willingness to engage in work, output and labor supply on the job, and retention. Our findings reveal that depression and anxiety are significant predictors of labor supply through reduced willingness to accept work opportunities both for individuals themselves and for other household members, especially when the work requires to leave home. In contrast, although we can't rule out small effects, we find no evidence that mental health influences productivity or retention among those who choose to work and can do so from their home. 
+
+These results have important implications for both theory and policy. First, they suggest that a potential mechanism through which poor mental health reduces labor market engagement may be through psychological barriers to participation rather than through reduced capability at work, conditional on being willing to work. This finding may help to explain mixed results in the literature regarding the impact of mental health treatments on labor outcomes ---while studies typically measure labor outcomes through productivity, earnings, or days worked--- our results suggest focusing on willingness to work may better capture the direct effects of mental health improvements.
+
+Second, our findings have significant implications for the design of anti-poverty programs, particularly workfare initiatives that are commonly used in low-income settings. The fact that mental health significantly correlates with job take-up rather than job performance suggests that adding mental health support services to existing workfare programs could increase their effectiveness. Further, the fact that mental health is associated with job take-up when the job must be done outside, but not when one can work from home, suggests that more flexible work arrangements can be a promising way of including people with poor mental health ---which is often a large fraction of the population in low income settings--- in the labor market. Moreover, given that poor mental health appears to create barriers to accepting work opportunities even when little other work is available, policymakers may need to reconsider the assumption that those most in need will automatically self-select into these programs.
+
+Finally, our results point to important directions for future research. While we document that mental health is strongly associated with willingness to work, understanding the specific psychological mechanisms behind this reluctance ---whether related to self-efficacy, misperception, or other factors--- remains an important area for investigation. Additionally, examining whether similar patterns hold in other contexts and for other types of work would help establish the generalizability of these findings.
+
+
+
+\clearpage
+\bibliographystyle{aer}
+\bibliography{references_vip_mh.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\begin{appendices}
+
+\renewcommand\thefigure{A.\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand\thetable{A.\arabic{table}}
+\setcounter{table}{0}
+
+\section{Appendix}
+\label{appendix_table}
+% Tables go here
+
+\subsection{Phase 1}
+
+
+\begin{table}[H]
+\caption{Association between alternate mental health measures and work offer acceptance}\label{cor_mh_signup_alternate}
+\centering
+\adjustbox{max width=\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_a.3_mh_signup}
+\begin{tablenotes}
+\item Note: High PHQ-2 and High GAD-2 are binary indicators equal to one if the respondent's score on the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools exceeds the clinical threshold. High PHQ-2 and GAD-2 indicates respondents who score above the threshold on both measures. The table presents two panels: acceptance of work from home offers and acceptance of work from site offers. The p-value in the last row tests the equality of coefficients between Work from Home and Work from Site specifications within each column. The robust standard errors are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+
+
+\begin{table}[H]
+\caption{Correlation between mental health and willingness to work (without additional controls)}\label{cor_mh_signup_nocontrol}
+\centering
+\adjustbox{width=.75\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_a.1_mh_signup}
+\begin{tablenotes}
+\item Note: This table examines the correlation between standardized mental health measures and willingness to work, distinguishing between work-from-home and work-from-site offers. The mental health measures (PHQ-2 and GAD-2) are standardized. We control for the order of work from site and work from home questions, whether both head and spouse were present. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+
+
+
+
+\subsection{Phase 2}
+
+
+
+
+\begin{table}[H]
+\caption{Work offers, labor supply, income and alternate mental health measures}\label{treat_mh_workdummy_nocontrols}
+\centering
+\adjustbox{width=.75\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_c.2_mh_work_bl}
+\begin{tablenotes}
+\item Note:  This table reports regression coefficients examining the relationship between job offers, labor market outcomes, and binary mental health measures. ``High PHQ-2'' (Patient Health Questionnaire-2 for depression) and ``High GAD-2'' (Generalized Anxiety Disorder-2 for anxiety) indicate scores above the clinical screening thresholds. The analysis covers three key outcome variables: Working or Not (employment status), Days Worked, and Work Income. The standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\begin{table}[H]
+\caption{Work offers, labor supply, income and full length mental health measures}\label{treat_mh_workdummy_full}
+\centering
+\adjustbox{width=.75\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_c.5_mh_work_bl}
+\begin{tablenotes}
+\item Note: This table reports regression coefficients examining the relationship between job offers, labor market outcomes, and standardized continuous mental health measures. The analysis uses the full-length mental health questionnaires - PHQ-8 (Patient Health Questionnaire-8 for depression) and GAD-7 (Generalized Anxiety Disorder-7 for anxiety) - with scores standardized (std). The analysis covers three key outcome variables: Working or Not (employment status), Days Worked, and Work Income. The standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\begin{table}[H]
+\caption{Work offers, labor supply, income and mental health measures (without additional controls)}\label{treat_mh_workdummy_no control}
+\centering
+\adjustbox{width=.75\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_c.4_mh_work_bl}
+\begin{tablenotes}
+\item Note: This table examines the relationship between mental health and labor market outcomes. PHQ-2 (std) and GAD-2 (std) refer to standardized scores from the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools. The average of PHQ-2 and GAD-2 is the standardized mean of both scores. The table presents four panels: Working (binary indicator), Days Worked (count of days), Bags produced (count of bags in each period), and Work Income (combines study and non-study income, in local currency units).  ``Job offer'' is a binary indicator for whether the respondent is randomly selected to be offered a job.  All regressions include period fixed effects. The standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\subsection{Other household members}
+
+
+\begin{table}[H]
+\caption{Association between alternate mental health measures and work offer acceptance for others}\label{cor_mh_signup_others_alternate}
+\centering
+\adjustbox{max width=\textwidth}{
+\begin{threeparttable}
+\input{table/updated/table_a.4_mh_signup_others}
+\begin{tablenotes}
+\item Note: High PHQ-2 and High GAD-2 are binary indicators equal to one if the respondent's score on the Patient Health Questionnaire-2 and Generalized Anxiety Disorder-2 screening tools exceeds the clinical threshold. High PHQ-2 and GAD-2 indicates respondents who score above the threshold on both measures. The table presents two panels: the top panel shows how respondent's mental health correlates with their assessment of other household members' availability for work-from-home opportunities, while the bottom panel shows the same for work-from-site opportunities. The p-value in the last row tests the equality of coefficients between Work from Home and Work from Site specifications within each column. N=500 observations across all specifications. The standard errors, clustered at the household level, are in parentheses. Statistical significance at the 0.10, 0.05, and 0.01 levels is indicated by *, **, and ***.
+\end{tablenotes}
+\end{threeparttable}
+}
+\end{table}
+
+\end{appendices}
+
+\end{document}
