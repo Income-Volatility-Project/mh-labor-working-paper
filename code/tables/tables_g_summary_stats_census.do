@@ -26,9 +26,9 @@ use "$mh_data/Pilot_3_Census_Reshaped_Analysis.dta", clear
 
   keep if respondent_eligible & respondent
 
-  local vars age_cs married_cs head spouse other_relation employed small_firm agriculture wage_work
+  local vars age_cs married_cs head spouse other_relation employed_cs small_firm_cs agriculture_cs wage_work_cs
   label var female "Female"
-  label var employed "Employed - 12 months"
+  label var employed_cs "Employed - 12 months"
 
   est clear
   eststo sum_mean_resp: estpost summarize `vars'

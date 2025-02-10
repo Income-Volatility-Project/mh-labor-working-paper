@@ -13,7 +13,7 @@ macro drop _all
 *****************START: Paths - JDE
 ************************************************
 
-global mh_root 		"/Users/st2246/Work/JDE-SI"
+global mh_root 		"/Users/st2246/Work/mh-labor-working-paper"
 cd "$mh_root"
 
 global mh_code 		"$mh_root/code"
