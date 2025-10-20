@@ -23,6 +23,7 @@ We use experimentally collected data for this project. Data was collected as par
 
 - **data/generated/Pilot_3_Census_Reshaped_Analysis**
 - **data/generated/Pilot_3_MH_Census_Study**
+- **data/generated/Pilot_3_Attrition**
 
 ### Statement about Rights
 
@@ -48,25 +49,29 @@ New users should follow these steps to run the package successfully:
 
 | Exhibit Name                                                                                         | Output filename                                | Script                                                 | Note                                     |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
-| Figure 1. Phase 1 Sample                                                                             | --                                             | --                                                     | A latex diagram found inside the diagram |
-| Figure 2. Phase 2 Sample and Randomization                                                           | --                                             | --                                                     | A latex diagram found inside the diagram |
-| Figure 3. Distribution of Mental Health Scores Among Female Participants                             | plot/fig.1.2.mh_distribution_preview.pdf       | code/figures/fig_1.2_mh_distribution_all.do            |                                          |
-| Figure 4. Mental Health and Work Offer Refusal Rates                                                 | plot/refuse_work_sem.pdf                       | code/figures/fig_3_refuse_work.do                      | Found in manuscript/plot                 |
-| Figure 5. Willingness to Work and Total Earnings during the Study                                    | plot/figure_2_imputed_scatter.pdf              | code/figures/fig_2_work_earning.do                     | Found in manuscript/plot                 |
-| Table 1. Summary Statistics – Phase 1                                                                | table/updated/table_g.1_mh_hh_summary          | code/tables/tables_g_summary_stats_census.do           | Found in manuscript/table/updated        |
-| Table 2. Summary Statistics – Phase 2                                                                | table/updated/table_i.1_mh_hh_summary          | code/tables/tables_i_summary_stats_study.do            | Found in manuscript/table/updated        |
-| Table 3. Correlation between Mental Health and Willingness to Work                                   | table/updated/table_a.5_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
-| Table 4. Association between Depression and Reasons for Work Refusal                                 | table/updated/table_b.3_mh_signup_reason       | code/tables/tables_b_refusal_reason_controls.do        | Found in manuscript/table/updated        |
-| Table 5. Work Offers, Labor Supply, Income and Mental Health                                         | table/updated/table_c.1_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
-| Table 6. Association between Baseline Mental Health and Quit Rate                                    | table/updated/table_h.0_mh_quit                | code/tables/tables_h_mh_quit.do                        | Found in manuscript/table/updated        |
-| Table 7. Association between Mental Health and Work Offer Acceptance for Others                      | table/updated/table_a.6_mh_signup_others       | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
-| Table 8. Association between Depression and Reasons for Work Refusal for Others                      | table/updated/table_b.4_mh_signup_reason_other | code/tables/tables_b_refusal_reason_controls.do        | Found in manuscript/table/updated        |
-| Table A.1 Association between Alternate Mental Health Measures and Work Offer Acceptance             | table/updated/table_a.3_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
-| Table A.2. Correlation between Mental Health and Willingness to Work (without additional controls)   | table/updated/table_a.1_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
-| Table A.3. Work Offers, Labor Supply, Income and Alternate Mental Health Measures                    | table/updated/table_c.2_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
-| Table A.4. Work Offers, Labor Supply, Income and Full-Length Mental Health Measures                  | table/updated/table_c.5_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
-| Table A.5. Work Offers, Labor Supply, Income and Mental Health (without additional controls)         | table/updated/table_c.4_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
-| Table A.6. Association between Alternate Mental Health Measures and Work Offer Acceptance for Others | table/updated/table_a.4_mh_signup_others       | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Figure 1. Distribution of Mental Health Scores Among Female Participants                             | plot/fig.1.2.mh_distribution_preview.png       | code/figures/fig_1.2_mh_distribution_all.do            | Found in manuscript/plot                 |
+| Figure 2. Mental Health and Work Offer Refusal Rates                                                 | plot/refuse_work_sem.pdf                       | code/figures/fig_3_refuse_work.do                      | Found in manuscript/plot                 |
+| Figure A.1. Take up of Work                                                                           | plot/fig_4_work_completion_vertical.jpg        | code/figures/fig_4_work_completion.do                  | Found in manuscript/plot                 |
+| Figure A.2. Job offer and labor supply                                                               | plot/fig_2_3_panel.pdf                         | code/figures/fig_2_labor_outcomes.do                   | Found in manuscript/plot                 |
+| Table 1. Screening Process and Survey Administration Details                                          | --                                             | --                                                     | A latex table found inside the document  |
+| Table 2. Study Timeline                                                                               | --                                             | --                                                     | A latex table found inside the document  |
+| Table 3. Summary Statistics – Phase 1                                                                | table/updated/table_g.1_mh_hh_summary          | code/tables/tables_g_summary_stats_census.do           | Found in manuscript/table/updated        |
+| Table 4. Summary Statistics – Phase 2                                                                | table/updated/table_i.1_mh_hh_summary          | code/tables/tables_i_summary_stats_study.do            | Found in manuscript/table/updated        |
+| Table 5. Correlation between Mental Health and Willingness to Work                                   | table/updated/table_a.5_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Table 6. Association between Depression and Reasons for Work Refusal                                 | table/updated/table_b.3_mh_signup_reason       | code/tables/tables_b_refusal_reason_controls.do        | Found in manuscript/table/updated        |
+| Table 7. Work Offers, Labor Supply, Income and Mental Health                                         | table/updated/table_c.5_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
+| Table 8. Association between Baseline Mental Health and Quit Rate                                    | table/updated/table_h.0_mh_quit                | code/tables/tables_h_mh_quit.do                        | Found in manuscript/table/updated        |
+| Table A.1. Response Rates of Phone Surveys and Endline                                               | table/updated/table_j_survey_response          | code/tables/tables_j_survey_response_rate.do           | Found in manuscript/table/updated        |
+| Table A.2. Association between Alternate Mental Health Measures and Work Offer Acceptance           | table/updated/table_a.3_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Table A.3. Correlation between Mental Health and Willingness to Work (without additional controls)  | table/updated/table_a.1_mh_signup              | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Table A.4. Correlation between Mental Health and Willingness to Work (with additional SES controls) | table/updated/table_aa.7_mh_signup_cov1        | code/tables/tables_aa_mh_offer_control_comparison.do   | Found in manuscript/table/updated        |
+| Table A.5. Correlation between Mental Health and Willingness to Work (with additional controls from Phase 2) | table/updated/table_ab.1_mh_signup_cs_bl | code/tables/tables_ab_mh_offer_subsample.do           | Found in manuscript/table/updated        |
+| Table A.6. Work Offers, Labor Supply, Income and Alternate Mental Health Measures                   | table/updated/table_c.8_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
+| Table A.7. Work Offers, Labor Supply, Income and Short-Form Mental Health Measures                  | table/updated/table_c.1_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
+| Table A.8. Work Offers, Labor Supply, Income and Mental Health (without additional controls)        | table/updated/table_c.7_mh_work_bl             | code/tables/tables_c_work_mh_bl.do                     | Found in manuscript/table/updated        |
+| Table B.1. Association between Mental Health and Work Offer Acceptance for Others                   | table/updated/table_a.6_mh_signup_others       | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Table B.2. Association between Alternate Mental Health Measures and Work Offer Acceptance for Others | table/updated/table_a.4_mh_signup_others      | code/tables/tables_a_mental_health_and_offer_accept.do | Found in manuscript/table/updated        |
+| Table B.3. Association between Depression and Reasons for Work Refusal for Others                   | table/updated/table_b.4_mh_signup_reason_other | code/tables/tables_b_refusal_reason_controls.do        | Found in manuscript/table/updated        |
 
 ## Requirements
 
@@ -83,8 +88,9 @@ No special instructions are required. Please ensure Stata is installed, the data
   - egenmore
   - grc1leg2
   - blindschemes
+  - swindex
 
-> Note: all requriements are included in this replication package. Only Stata is required
+> Note: all requriements are included in this replication package. Only Stata installation is required to run the replication code
 
 ### Memory and Runtime and Storage Requirements
 

@@ -16,6 +16,8 @@
 		global study_mental_bl 					phq2_z_bl gad2_z_bl phq2_gad2_average_bl
 		global study_mental_bl_full 		phq8_z_bl gad7_z_bl phq8_gad7_average_bl
 		global study_mental_bl_appendix phq2_high_bl gad2_high_bl phq_gad_high_bl
+		global study_mental_bl_appendix_full phq8_high_bl gad7_high_bl phq_gad_high_full_bl
+
 		// Mental Health Measures used for study regressions
 		global study_mental 						phq2_z gad2_z phq2_gad2_average
 		global study_mental_appendix 		phq2_high gad2_high phq_gad_high

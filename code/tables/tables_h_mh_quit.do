@@ -5,11 +5,12 @@ use "$mh_data/Pilot_3_MH_Census_Study.dta", clear
 replace money_earn_ = 0 if !work_engaged_
 replace days_worked_ = 0 if !work_engaged_
 
-keep if participant & treated
+keep if participant | (!survey & one_obs_per_hh_id_period)
+keep if treated
 
 // Define table specifications
 local table0_filename "$mh_tables/table_h.0_mh_quit.tex"
-local table0_mental_vars $study_mental_bl
+local table0_mental_vars $study_mental_bl_full
 local table6_filename "$mh_tables/table_h.6_mh_quit.tex"
 local table6_mental_vars $study_mental_full
 
@@ -20,19 +21,19 @@ foreach period in 0 6 {
     // Panel A - Quit Variable 1
     local counter 1
     foreach mental_measure of varlist ``tablename'_mental_vars' {
-        eststo `tablename'_q1_`counter': reg quit_pickup_v1 `mental_measure' if period == `period', robust
+        eststo `tablename'_q1_`counter': reg quit_pickup_v1 `mental_measure' if period == `period', robust cluster(hh_id)
             su quit_pickup_v1 if e(sample)
             estadd scalar mean = r(mean)
     
-        eststo `tablename'_q2_`counter': reg quit_pickup_v2 `mental_measure' if period == `period', robust
+        eststo `tablename'_q2_`counter': reg quit_pickup_v2 `mental_measure' if period == `period', robust cluster(hh_id)
             su quit_pickup_v2 if e(sample)
             estadd scalar mean = r(mean)
 
-        eststo `tablename'_q3_`counter': reg quit_pickup_v3 `mental_measure' if period == `period', robust
+        eststo `tablename'_q3_`counter': reg quit_pickup_v3 `mental_measure' if period == `period', robust cluster(hh_id)
             su quit_pickup_v3 if e(sample)
             estadd scalar mean = r(mean)
 
-        eststo `tablename'_q4_`counter': reg quit_pickup_v4 `mental_measure' if period == `period', robust
+        eststo `tablename'_q4_`counter': reg quit_pickup_v4 `mental_measure' if period == `period', robust cluster(hh_id)
             su quit_pickup_v4 if e(sample)
             estadd scalar mean = r(mean)
         
@@ -42,7 +43,7 @@ foreach period in 0 6 {
     // Output the tables
     esttab `tablename'_q1_* using "``tablename'_filename'", ///
         $format_options $header_options ///
-        scalars("mean Dep. Var. Mean") drop(_cons) ///
+        scalars("mean Dep. Var. Mean") sfmt("a3 a3") drop(_cons) ///
         posthead("\midrule \multicolumn{@span}{c}{\textbf{Didn't turn in bags at endline}} \\ \midrule")
         
     /*esttab `tablename'_q2_* using "``tablename'_filename'", ///
@@ -53,6 +54,6 @@ foreach period in 0 6 {
         
     esttab `tablename'_q4_* using "``tablename'_filename'", ///
         $format_options $footer_options ///
-        scalars("mean Dep. Var. Mean") drop(_cons) ///
+        scalars("mean Dep. Var. Mean") sfmt("a2 a2") drop(_cons) ///
         posthead("\multicolumn{@span}{c}{\textbf{Last period in which participant submits bags}} \\ \midrule")
 }

@@ -14,7 +14,7 @@
 
   label var num_adults        "Number of Adults"
   label var size              "Number of Members"
-  label var total_hh_income_w   "Income"
+  label var total_hh_income_w   "Income (10 days)"
 
 
   local hh_vars num_adults size total_hh_income_w
@@ -35,9 +35,9 @@ use "$data_gen/Pilot_3_MH_Census_Study.dta" if period == 0, clear
   keep if participant
 
 	
-  local vars age married_cs education_years work_engaged_ agriculture_work wage_work_study  other_work_study  phq2_high gad2_high  // martial_status 
+  local vars age married_cs education_years work_engaged_ agriculture_work wage_work_study  other_work_study  phq8_high gad7_high  // martial_status 
 
-  label var work_engaged_ "Employed - 10 days"
+  label var work_engaged_ "Employed (10 days)"
 
   //replace education_years = 0 if missing(education_years)
 

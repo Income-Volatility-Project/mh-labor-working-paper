@@ -1,4 +1,4 @@
-* 00000007
+* 00000009
 *! version 1.0.0
 * Do not erase or edit this file
 * It is used by Stata to track the ado and help
@@ -401,4 +401,101 @@ f style/color-plr2.style
 f style/color-ply1.style
 f style/color-ply2.style
 f style/color-ply3.style
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N swindex.pkg
+D 15 Aug 2025
+U 8
+d 'SWINDEX': module to create a standardized weighted index of multiple indicator variables
+d 
+d  swindex calculates a standardized weighted index from the
+d variables in the varlist.  The procedure follows a GLS weighting
+d procedure as described in Anderson (JASA, 2008).
+d 
+d KW: indicator variables
+d KW: index
+d 
+d Requires: Stata version 14
+d 
+d Distribution-Date: 20210224
+d 
+d Author: Benjamin Schwab, Kansas State University
+d Support: email benschwab@@ksu.edu
+d 
+d Author: Sarah Janzen, University of Illinois at Urbana Champaign
+d Support: email sjanzen@@illinois.edu
+d 
+d Author: Nicholas P. Magnan, University of Georgia
+d Support: email nmagnan@@uga.edu
+d 
+d Author: William M. Thompson, IDInsight
+d Support: email will.thompson@@idinsight.org
+d 
+f s/swindex.ado
+f s/swindex.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/i
+N ietoolkit.pkg
+D  5 Sep 2025
+U 9
+d 'IETOOLKIT': module providing commands specially developed for Impact Evaluations
+d 
+d  ietookit provides a set of commands that address different
+d aspects of data management and data analysis in relation to
+d Impact Evaluations. The list of commands will be extended
+d continuously, and suggestions on new commands are highly
+d appreciated. Some of the commands are related to standardized
+d practices developed at the World Bank’s unit for Impact
+d Evaluations (DIME) and might not apply to practices adopted at
+d other institutions. For these commands, the corresponding help
+d files provide justifications for the standardized practices
+d applied. ieduplicates and iecompdup are useful tools to identify
+d and correct for duplicates. iebaltab is a tool for multiple
+d treatment arm balance tables. ieboilstart standardizes the
+d boilerplate code at the top of all do-files. iegraph produces
+d graphs based on common impact evaluation regression models. See
+d https://github.com/worldbank/ietoolkit for more details.
+d 
+d KW: reproducible research
+d KW: impact evaluations
+d KW: data management
+d KW: survey data
+d KW: data analysis
+d KW: balance tables
+d KW: difference-in-differences
+d KW: matching
+d 
+d Requires: Stata version 12
+d 
+d Distribution-Date: 20240212
+d 
+d Author: DIME Analytics, The World Bank, DECIE
+d Support: email  lcardosodeandrad@@worldbank.org
+d 
+f i/ietoolkit.ado
+f i/ietoolkit.sthlp
+f i/iebaltab.ado
+f i/iebaltab.sthlp
+f i/ieboilsave.ado
+f i/ieboilsave.sthlp
+f i/ieboilstart.ado
+f i/ieboilstart.sthlp
+f i/ieddtab.ado
+f i/ieddtab.sthlp
+f i/iedorep.ado
+f i/iedorep.sthlp
+f i/iedropone.ado
+f i/iedropone.sthlp
+f i/iefolder.ado
+f i/iefolder.sthlp
+f i/iegitaddmd.ado
+f i/iegitaddmd.sthlp
+f i/iegraph.ado
+f i/iegraph.sthlp
+f i/iekdensity.ado
+f i/iekdensity.sthlp
+f i/iematch.ado
+f i/iematch.sthlp
+f i/iesave.ado
+f i/iesave.sthlp
 e
