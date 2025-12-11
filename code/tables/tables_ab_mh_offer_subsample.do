@@ -180,7 +180,7 @@ local scalar_option_footer scalars("mean Dep. Var. Mean" "p p-value: W.f. Home  
         keep(gad2_z_cs) `scalar_option_none' $format_options $segment_options ///
         posthead(" ")
 
-    esttab phq2_gad2_average_cs_fh_* phq2_gad2_average_cs_sh_* using "`table_filename'", ///
+    esttab phq2_gad2_average_cs_fo_* phq2_gad2_average_cs_so_* using "`table_filename'", ///
         keep(phq2_gad2_average_cs) `scalar_option_top' $format_options $segment_options ///
         posthead(" ")
 
