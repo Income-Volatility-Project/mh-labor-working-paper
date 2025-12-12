@@ -43,7 +43,7 @@ qui foreach mental_measure of varlist phq2_z_cs gad2_z_cs phq2_gad2_average_cs {
         estadd scalar p = `diff_test_p'
 
     eststo `mental_measure'_fh_1: reghdfe  work_home `covs' , vce(robust) // absorb(community)
-        su work_out, meanonly
+        su work_home, meanonly
         estadd scalar mean = r(mean)
         estadd scalar p = `diff_test_p'
 
@@ -67,7 +67,7 @@ qui foreach mental_measure of varlist phq2_z_cs gad2_z_cs phq2_gad2_average_cs {
         estadd scalar p = `diff_test_p'
 
     eststo `mental_measure'_fh_2: reghdfe  work_home `covs', vce(robust) // absorb(community)
-        su work_out, meanonly
+        su work_home, meanonly
         estadd scalar mean = r(mean)
         estadd scalar p = `diff_test_p'
 }
@@ -121,7 +121,7 @@ qui foreach mental_measure of varlist phq2_z_cs gad2_z_cs phq2_gad2_average_cs{
             estadd scalar mean = r(mean)
 
         eststo `mental_measure'_sh_`i': reghdfe  work_home `mental_measure' `cov`i''  , vce(robust) 
-            su work_out, meanonly
+            su work_home, meanonly
             estadd scalar mean = r(mean)
 
     }
@@ -170,7 +170,7 @@ local table_filename "$mh_tables/table_ab.3_mh_signup_cs_bl.tex"
 local scalar_option scalars("mean Dep. Var. Mean" "N Observations") sfmt("a2") noobs
 local scalar_option_none scalars() noobs
 local scalar_option_top scalars("mean Dep. Var. Mean") sfmt("a2") noobs
-local scalar_option_footer scalars("mean Dep. Var. Mean" "p p-value: W.f. Home  == W. outside" "N Observations") sfmt("a2") noobs
+local scalar_option_footer scalars("mean Dep. Var. Mean" "N Observations") sfmt("a2") noobs
 /// Make 2nd R&R requested version of this table; identical expect columns 2 now is from Table A.4's column 2
     esttab phq2_z_cs_fo_* phq2_z_cs_so_*  using "`table_filename'",  ///
             $format_options `scalar_option_none' $header_options keep(phq2_z_cs) ///
@@ -186,7 +186,7 @@ local scalar_option_footer scalars("mean Dep. Var. Mean" "p p-value: W.f. Home  
 
     esttab phq2_z_cs_fh_* phq2_z_cs_sh_*  using "`table_filename'",  ///
             $format_options `scalar_option_none' $segment_options keep(phq2_z_cs) ///
-            posthead("\midrule & \multicolumn{6}{c}{\textbf{Willingness to work outside the home}} \\ \midrule")
+            posthead("\midrule & \multicolumn{6}{c}{\textbf{Willingness to work from home}} \\ \midrule")
 
     esttab gad2_z_cs_fh_* gad2_z_cs_sh_*  using "`table_filename'", ///
         keep(gad2_z_cs) `scalar_option_none' $format_options $segment_options ///
