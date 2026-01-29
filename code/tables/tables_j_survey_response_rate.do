@@ -35,8 +35,8 @@ estimates store overall
 
 // Create table with esttab
 // Do model by model using fragments so that each period is a row
-local header_prehead "{\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi} \begin{tabular}{l*{1}{ccc}} \hline\hline"
-local footer_postfoot "\hline\hline \end{tabular}}"
+local header_prehead "{\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi} \begin{tabular}{l*{1}{ccc}} \toprule"
+local footer_postfoot "\bottomrule \end{tabular}}"
 local common_opts starlevels(* 0.10 ** 0.05 *** 0.01) cells("mu_1(fmt(3) label(Control)) mu_2(fmt(3) label(Treatment)) b(fmt(3) star label(Difference))") 
 
 // Add 3 column spanning model header with underline called "Survey Response Rate"

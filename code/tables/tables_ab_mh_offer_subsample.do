@@ -171,13 +171,17 @@ local scalar_option scalars("mean Dep. Var. Mean" "N Observations") sfmt("a2") n
 local scalar_option_none scalars() noobs
 local scalar_option_top scalars("mean Dep. Var. Mean") sfmt("a2") noobs
 local scalar_option_footer scalars("mean Dep. Var. Mean" "N Observations") sfmt("a2") noobs
+
+// Customize table constants to remove lines after g
+local header_options  postfoot(" ")  replace 
+local segment_options fragment append prehead(" ") nonumber prefoot(" ") 
 /// Make 2nd R&R requested version of this table; identical expect columns 2 now is from Table A.4's column 2
     esttab phq2_z_cs_fo_* phq2_z_cs_so_*  using "`table_filename'",  ///
-            $format_options `scalar_option_none' $header_options keep(phq2_z_cs) ///
+            $format_options `scalar_option_none' `header_options' keep(phq2_z_cs) ///
             posthead("\midrule & \multicolumn{6}{c}{\textbf{Willingness to work outside the home}} \\ \midrule")
 
     esttab gad2_z_cs_fo_* gad2_z_cs_so_*  using "`table_filename'", ///
-        keep(gad2_z_cs) `scalar_option_none' $format_options $segment_options ///
+        keep(gad2_z_cs) `scalar_option_none' $format_options `segment_options' ///
         posthead(" ")
 
     esttab phq2_gad2_average_cs_fo_* phq2_gad2_average_cs_so_* using "`table_filename'", ///
@@ -185,11 +189,11 @@ local scalar_option_footer scalars("mean Dep. Var. Mean" "N Observations") sfmt(
         posthead(" ")
 
     esttab phq2_z_cs_fh_* phq2_z_cs_sh_*  using "`table_filename'",  ///
-            $format_options `scalar_option_none' $segment_options keep(phq2_z_cs) ///
+            $format_options `scalar_option_none' `segment_options' keep(phq2_z_cs) ///
             posthead("\midrule & \multicolumn{6}{c}{\textbf{Willingness to work from home}} \\ \midrule")
 
     esttab gad2_z_cs_fh_* gad2_z_cs_sh_*  using "`table_filename'", ///
-        keep(gad2_z_cs) `scalar_option_none' $format_options $segment_options ///
+        keep(gad2_z_cs) `scalar_option_none' $format_options `segment_options' ///
         posthead(" ")
 
     esttab phq2_gad2_average_cs_fh_* phq2_gad2_average_cs_sh_* using "`table_filename'", ///

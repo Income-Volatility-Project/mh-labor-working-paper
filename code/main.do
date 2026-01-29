@@ -11,7 +11,15 @@ macro drop _all
 
 
 // SET PATH TO FOLDER HERE
-global mh_root 		"/Users/st2246/Work/mh-labor-working-paper"
+global mh_root 		
+
+// Try to automatically set path if none detected.
+if "$mh_root" == "" {
+	local cwd : pwd
+	cd "`cwd'/.."
+	local cwd : pwd
+	global mh_root "`cwd'"
+}
 
 
 do "$mh_root/code/setup.do"
