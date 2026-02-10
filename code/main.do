@@ -11,7 +11,7 @@ macro drop _all
 
 
 // SET PATH TO FOLDER HERE
-global mh_root 		
+global mh_root
 
 // Try to automatically set path if none detected.
 if "$mh_root" == "" {
@@ -22,7 +22,14 @@ if "$mh_root" == "" {
 }
 
 
+// Create necessary directories if they don't exist
+cap mkdir "$mh_root/manuscript"
+cap mkdir "$mh_root/manuscript/plot"
+cap mkdir "$mh_root/manuscript/table"
+cap mkdir "$mh_root/manuscript/table/updated"
+
 do "$mh_root/code/setup.do"
+
 
 * Run figures
 do "$mh_code/figures/fig_1.2_mh_distribution_all.do"

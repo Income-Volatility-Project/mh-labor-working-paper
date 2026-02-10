@@ -21,9 +21,9 @@ Please contact the one of the authors of the paper for access to the data:
 
 We use experimentally collected data for this project. Data was collected as part of an ongoing RCT.
 
-- **data/generated/Pilot_3_Census_Reshaped_Analysis**
-- **data/generated/Pilot_3_MH_Census_Study**
-- **data/generated/Pilot_3_Attrition**
+- **data/generated/Pilot_3_Census_Reshaped_Analysis**: contains survey responses to the Phase 1 (census) questionnaire. Data is at the household-member level
+- **data/generated/Pilot_3_MH_Census_Study**: contains data from Phase 1 and 2 (pilot study) for households that participated in Phase 2 of the study. Data is at the household-member level.
+- **data/generated/Pilot_3_Attrition**: contains data on survey completion. Data is at the household level
 
 ### Statement about Rights
 
